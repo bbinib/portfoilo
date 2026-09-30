@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>위찬빈 포트폴리오 | 목원대학교 컴퓨터융합학부</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f7f4;--card:#fff;--ink:#16212b;--mute:#5d6b76;--line:#dde2de;--acc:#0b6b5c;--acc2:#e4f2ee;--warn:#b4531c;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#10171b;--card:#182228;--ink:#e8eeea;--mute:#93a3ab;--line:#2a373e;--acc:#4fd1b5;--acc2:#183a35;--warn:#f0a06a}}
+:root[data-theme="dark"]{--bg:#10171b;--card:#182228;--ink:#e8eeea;--mute:#93a3ab;--line:#2a373e;--acc:#4fd1b5;--acc2:#183a35;--warn:#f0a06a}
+html{scroll-padding-top:calc(64px + env(safe-area-inset-top,0px));scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.7 "IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;word-break:keep-all}
+a{color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);border-bottom:1px solid var(--line);z-index:5}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:56px;gap:12px}
+nav{display:flex;gap:16px;font-size:14px;overflow-x:auto}
+nav a{text-decoration:none;color:var(--mute);white-space:nowrap}
+nav a:hover{color:var(--ink)}
+.brand{font-weight:700;white-space:nowrap}
+button{font:inherit;cursor:pointer}
+button:focus-visible,a:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.icon{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:8px;padding:4px 10px;font-size:13px}
+.status{font-size:11px;border:1px solid var(--warn);color:var(--warn);border-radius:6px;padding:3px 9px;white-space:nowrap}
+section{padding:64px 0 8px}
+h1{font-size:clamp(28px,5vw,44px);line-height:1.25;margin:0 0 16px;letter-spacing:-.02em}
+h2{font-size:24px;margin:0 0 6px;letter-spacing:-.01em}
+.sub{color:var(--mute);margin:0 0 24px;max-width:60ch}
+.hero{display:grid;grid-template-columns:1fr;gap:32px;align-items:start}
+@media(min-width:860px){.hero{grid-template-columns:1fr 1.1fr}}
+.who{color:var(--mute);margin:0 0 20px}
+.cta{display:flex;gap:10px;flex-wrap:wrap}
+.btn{display:inline-block;padding:10px 18px;border-radius:8px;border:1px solid var(--acc);background:var(--acc);color:var(--bg);text-decoration:none;font-weight:500}
+.btn.ghost{background:transparent;color:var(--acc)}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
+.panel h3{margin:0 0 4px;font-size:17px}
+.panel p.n{margin:0 0 14px;color:var(--mute);font-size:14px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.chip{border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:999px;padding:5px 13px;font-size:14px}
+.chip[aria-pressed="true"]{background:var(--acc2);border-color:var(--acc);color:var(--acc);font-weight:500}
+.row{margin:0 0 14px}
+.row .top{display:flex;justify-content:space-between;gap:8px;font-size:15px}
+.row .top b{font-weight:500}
+.bar{height:8px;border-radius:4px;background:var(--acc2);margin:6px 0 4px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--acc);width:0;transition:width .5s ease}
+.row small{color:var(--mute);font-size:13px}
+.row small em{font-style:normal;color:var(--warn)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:16px}
+.proj{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px;display:flex;flex-direction:column;gap:8px}
+.proj h3{margin:0;font-size:18px}
+.proj p{margin:0;color:var(--mute);font-size:15px}
+.proj .role{font-size:13px;color:var(--acc)}
+.tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:auto;padding-top:8px}
+.tags span{font-size:12px;background:var(--acc2);color:var(--acc);padding:2px 9px;border-radius:6px}
+.two{display:grid;grid-template-columns:1fr;gap:16px}
+@media(min-width:860px){.two{grid-template-columns:1fr 1fr}}
+.skl{display:grid;grid-template-columns:130px 1fr;gap:8px 12px;align-items:center;font-size:15px}
+.dots{display:flex;gap:4px}.dots i{width:14px;height:6px;border-radius:3px;background:var(--line)}.dots i.on{background:var(--acc)}
+.note{font-size:13px;color:var(--mute);margin-top:12px}
+.empty{border:1px dashed var(--line);border-radius:10px;padding:24px;text-align:center;color:var(--mute);font-size:14px}
+footer{margin-top:64px;border-top:1px solid var(--line);padding:28px 0 40px;color:var(--mute);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media(prefers-reduced-motion:reduce){.bar i{transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <span class="brand" id="brand"></span>
+  <nav><a href="#match">직무 적합도</a><a href="#projects">프로젝트</a><a href="#skills">스킬 · 자격증</a><a href="#career">진로 탐색</a><a href="#dart">기업 조회</a><a href="#contact">연락</a></nav>
+  <button class="icon" id="theme" aria-label="화면 모드 전환">모드</button>
+</div></header>
+
+<main class="wrap">
+<section id="match" style="padding-top:48px">
+  <div class="hero">
+    <div>
+      <span class="status" id="draftBadge">DRAFT · 작성 중</span>
+      <h1 id="headline" style="margin-top:12px"></h1>
+      <p class="who" id="who"></p>
+      <p class="sub" id="intro"></p>
+      <div class="cta"><a class="btn" href="#projects">프로젝트 보기</a><a class="btn ghost" href="#contact">연락하기</a></div>
+    </div>
+    <div class="panel">
+      <h3>내 스킬로 보는 직무 유형 적합도</h3>
+      <p class="n">스킬을 켜고 끄면 적합도가 바로 바뀝니다. 아래는 특정 기업이 아닌 일반적인 직무 유형 예시입니다 — 실제 지원 기업 정보를 주시면 이 자리에 채워드립니다.</p>
+      <div class="chips" id="skillChips"></div>
+      <div id="matchList"></div>
+      <p class="note" id="matchNote"></p>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>프로젝트</h2>
+  <p class="sub">태그를 누르면 관련 프로젝트만 보입니다.</p>
+  <div class="chips" id="projFilter"></div>
+  <div class="grid" id="projGrid"></div>
+</section>
+
+<section id="skills">
+  <h2>스킬 · 자격증</h2>
+  <p class="sub">숙련도는 본인 체감 기준이며, 자격증은 현재 진행 상태를 그대로 적었습니다.</p>
+  <div class="two">
+    <div class="panel"><h3>다뤄본 언어 · 개념</h3><div class="skl" id="skillTable"></div><p class="note">※ "시간이 지나 많이 잊었다"고 본인이 밝힌 항목 포함 — 재학습 필요.</p></div>
+    <div class="panel"><h3>자격증 현황</h3><div id="certList"></div></div>
+  </div>
+</section>
+
+<section id="career">
+  <h2>진로 탐색</h2>
+  <p class="sub">관심 있는 일을 고르면 맞는 직무 방향을 순서대로 보여줍니다.</p>
+  <div class="two">
+    <div class="panel"><h3>관심 있는 일</h3><p class="n">여러 개 선택할 수 있습니다.</p><div class="chips" id="interestChips"></div></div>
+    <div class="panel"><h3>추천 직무 방향</h3><div id="trackList"><p class="n">관심 있는 일을 하나 이상 골라주세요.</p></div></div>
+  </div>
+</section>
+
+
+<section id="dart">
+  <h2>기업 정보 조회 (DART 연동)</h2>
+  <p class="sub">본인의 DART(전자공시) Open API 키로 실제 기업 정보를 조회합니다. 키는 이 브라우저에만 저장되며, DART 서버로 보내는 요청 외에는 전송되지 않습니다.</p>
+  <div class="panel">
+    <h3>API 키 설정</h3>
+    <p class="n">키가 없다면 <a href="https://opendart.go.kr" target="_blank" rel="noopener">opendart.go.kr</a>에서 무료로 발급받을 수 있습니다.</p>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px">
+      <input id="dartKeyInput" type="password" placeholder="DART API 키 입력" style="flex:1;min-width:200px;padding:9px 12px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink)">
+      <button class="btn" id="dartKeySave" type="button" style="padding:9px 16px;border-radius:8px">저장</button>
+    </div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px">
+      <input id="dartQuery" type="text" placeholder="기업명 검색 (예: 삼성전자)" style="flex:1;min-width:200px;padding:9px 12px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink)">
+      <button class="btn" id="dartSearchBtn" type="button" style="padding:9px 16px;border-radius:8px">검색</button>
+    </div>
+    <div id="dartStatus" class="note"></div>
+    <div id="dartResultList"></div>
+    <div id="dartCompanyInfo"></div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>연락</h2>
+  <p class="sub">문의는 아래로 연락 주세요.</p>
+  <div class="panel" id="contactBox"></div>
+</section>
+</main>
+
+<footer><div class="wrap"><span id="foot"></span><span>이 페이지는 확보된 실제 정보만 반영했습니다. 데이터 갱신 시 계속 업데이트됩니다.</span></div></footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script>
+/* ===== 실제 데이터: 대화에서 확인된 내용만 반영, 확인 필요 항목은 명시 ===== */
+const DATA = {
+  name: "위찬빈",
+  school: "목원대학교 컴퓨터융합학부 4학년 2학기 (졸업예정 2027.02, 4학년 1학기까지 GPA 3.90/4.50)",
+  headline: "경험을 근거로 방향을 좁혀가는 중입니다",
+  intro: "네트워크·보안 직무를 중심으로 진로를 탐색하고 있습니다. AI 활용 코딩 학습 게임 캡스톤 프로젝트와 학회 논문 작성으로 동상을 받았고, 지금은 관련 자격증을 준비하며 부족한 부분을 채워가는 단계입니다.",
+  email: "이메일 확인 필요",
+  github: "GitHub 링크 확인 필요",
+  skills: [
+    {n:"Python",l:2},{n:"Java",l:2},{n:"C++",l:2},{n:"C#",l:2},
+    {n:"Linux(VirtualBox)",l:2},{n:"네트워크 기초",l:1},{n:"보안 기초",l:1}
+  ],
+  certs: [
+    {n:"정보처리기사",status:"필기 합격 · 실기 준비 중 (3회차 재도전)",pct:55},
+    {n:"SQLD",status:"응시 · 불합격",pct:30},
+    {n:"네트워크관리사 2급",status:"접수 예정",pct:10}
+  ],
+  projects: [
+    {t:"AI 활용 코딩 학습 퍼즐 게임", d:"코드를 직접 작성해 스테이지를 클리어하며 코딩과 AI 활용법을 함께 배우는 게임. 캡스톤디자인으로 진행 중.", r:"역할 확인 필요 · 팀 인원 확인 필요", tags:["게임개발","AI 활용","캡스톤"]},
+    {t:"학회 논문 작성 (한국디지털콘텐츠학회)", d:"위 캡스톤 프로젝트를 바탕으로 연구배경·연구내용 등 5개 목차 논문을 전담 작성. 대학생 부문 동상 수상.", r:"논문 작성 담당", tags:["문서화","학회발표","보고서작성"]}
+  ],
+  companies: [],
+  matchNote: "※ 관심 있는 실제 기업이나 채용 공고를 알려주시면, 해당 기업의 공개 정보를 조사해 근거 있는 적합도로 채워드립니다.",
+  interests: [
+    {k:"시스템 · 서버",v:"sys"},{k:"네트워크 인프라",v:"net"},{k:"보안 · 취약점 분석",v:"sec"},
+    {k:"문서화 · 보고",v:"doc"},{k:"대면 응대",v:"cs"},{k:"자동화 · 스크립팅",v:"auto"}
+  ],
+  tracks: [
+    {n:"네트워크 운영/엔지니어",d:"네트워크 인프라를 구축·운영합니다. 네트워크관리사, CCNA 등 자격증이 실질적인 근거가 됩니다.",w:{net:3,sys:1}},
+    {n:"보안관제(SOC)",d:"보안 이벤트를 모니터링하고 대응합니다. 문서화·보고 능력이 실무에서 크게 쓰입니다.",w:{sec:3,doc:1}},
+    {n:"시스템/인프라 엔지니어",d:"서버와 시스템을 운영·관리합니다. Linux 숙련도를 끌어올리는 것이 우선순위입니다.",w:{sys:3,net:1,auto:1}},
+    {n:"모의해킹/취약점 분석",d:"시스템의 취약점을 찾고 검증합니다. 실습 기반 경험(CTF, 랩 환경)이 핵심입니다.",w:{sec:3,auto:1}},
+    {n:"보안 컨설팅/문서화",d:"보안 정책과 리포트를 작성합니다. 학회 논문 작성 경험이 직접적인 강점이 됩니다.",w:{doc:3,sec:2}}
+  ]
+};
+/* ===== 이하 렌더링 로직 ===== */
+const $=id=>document.getElementById(id);
+const on=new Set(DATA.skills.filter(s=>s.l>=3).map(s=>s.n));
+const picked=new Set();
+let filter="전체";
+
+$("brand").textContent=DATA.name+" 포트폴리오";
+$("headline").textContent=DATA.headline;
+$("who").textContent=DATA.name+" · "+DATA.school;
+$("intro").textContent=DATA.intro;
+$("foot").textContent="© "+new Date().getFullYear()+" "+DATA.name;
+document.title=DATA.name+" 포트폴리오 | 목원대학교 컴퓨터융합학부";
+$("contactBox").innerHTML=`<p style="margin:0 0 12px">이메일: ${DATA.email}</p><p style="margin:0">GitHub: ${DATA.github}</p>`;
+$("matchNote").textContent=DATA.matchNote;
+
+function chip(label,pressed,fn){const b=document.createElement("button");b.className="chip";b.textContent=label;b.setAttribute("aria-pressed",pressed);b.onclick=fn;return b}
+
+function renderSkillChips(){
+  const box=$("skillChips");box.innerHTML="";
+  DATA.skills.forEach(s=>box.append(chip(s.n,on.has(s.n),()=>{on.has(s.n)?on.delete(s.n):on.add(s.n);renderSkillChips();renderMatch()})));
+}
+function renderMatch(){
+  if(!DATA.companies.length){
+    $("matchList").innerHTML='<div class="empty">아직 매칭할 직무/기업 정보가 없습니다. 관심 있는 기업명이나 공고를 알려주세요.</div>';
+    return;
+  }
+  const list=DATA.companies.map(c=>{
+    const tot=Object.values(c.req).reduce((a,b)=>a+b,0);
+    let got=0;const miss=[];
+    for(const k in c.req){on.has(k)?got+=c.req[k]:miss.push(k)}
+    return {...c,pct:Math.round(got/tot*100),miss};
+  }).sort((a,b)=>b.pct-a.pct);
+  $("matchList").innerHTML=list.map(c=>`<div class="row"><div class="top"><b>${c.n}</b><span>${c.pct}%</span></div>
+    <div class="bar" role="img" aria-label="${c.n} 적합도 ${c.pct}%"><i data-w="${c.pct}"></i></div>
+    <small>${c.role}${c.miss.length?` · <em>보완: ${c.miss.join(", ")}</em>`:" · 필요 스킬을 모두 갖췄습니다"}</small></div>`).join("");
+  requestAnimationFrame(()=>requestAnimationFrame(()=>document.querySelectorAll("#matchList .bar i").forEach(i=>i.style.width=i.dataset.w+"%")));
+}
+function renderProjects(){
+  const tags=["전체",...new Set(DATA.projects.flatMap(p=>p.tags))];
+  const f=$("projFilter");f.innerHTML="";
+  tags.forEach(t=>f.append(chip(t,t===filter,()=>{filter=t;renderProjects()})));
+  const shown=DATA.projects.filter(p=>filter==="전체"||p.tags.includes(filter));
+  $("projGrid").innerHTML=shown.map(p=>`<article class="proj"><h3>${p.t}</h3><span class="role">${p.r}</span><p>${p.d}</p><div class="tags">${p.tags.map(t=>`<span>${t}</span>`).join("")}</div></article>`).join("");
+}
+function renderSkills(){
+  $("skillTable").innerHTML=DATA.skills.map(s=>`<span>${s.n}</span><span class="dots" role="img" aria-label="숙련도 ${s.l}/5">${[1,2,3,4,5].map(i=>`<i class="${i<=s.l?"on":""}"></i>`).join("")}</span>`).join("");
+}
+function renderCerts(){
+  $("certList").innerHTML=DATA.certs.map(c=>`<div class="row"><div class="top"><b>${c.n}</b></div><div class="bar"><i data-w="${c.pct}"></i></div><small>${c.status}</small></div>`).join("");
+  requestAnimationFrame(()=>requestAnimationFrame(()=>document.querySelectorAll("#certList .bar i").forEach(i=>i.style.width=i.dataset.w+"%")));
+}
+function renderInterests(){
+  const box=$("interestChips");box.innerHTML="";
+  DATA.interests.forEach(i=>box.append(chip(i.k,picked.has(i.v),()=>{picked.has(i.v)?picked.delete(i.v):picked.add(i.v);renderInterests();renderTracks()})));
+}
+function renderTracks(){
+  const box=$("trackList");
+  if(!picked.size){box.innerHTML='<p class="n">관심 있는 일을 하나 이상 골라주세요.</p>';return}
+  const ranked=DATA.tracks.map(t=>({...t,s:[...picked].reduce((a,k)=>a+(t.w[k]||0),0)})).filter(t=>t.s>0).sort((a,b)=>b.s-a.s).slice(0,3);
+  if(!ranked.length){box.innerHTML='<p class="n">선택한 관심사와 맞는 방향을 찾지 못했습니다. 다른 항목도 선택해 보세요.</p>';return}
+  const max=ranked[0].s;
+  box.innerHTML=ranked.map(t=>`<div class="row"><div class="top"><b>${t.n}</b><span>${Math.round(t.s/max*100)}%</span></div><div class="bar"><i style="width:${Math.round(t.s/max*100)}%"></i></div><small>${t.d}</small></div>`).join("");
+}
+function setTheme(t){try{document.documentElement.dataset.theme=t;localStorage.setItem("theme",t)}catch(e){document.documentElement.dataset.theme=t}}
+$("theme").onclick=()=>{const d=document.documentElement.dataset.theme==="dark"||(!document.documentElement.dataset.theme&&matchMedia("(prefers-color-scheme:dark)").matches);setTheme(d?"light":"dark")};
+try{const t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}
+renderSkillChips();renderMatch();renderProjects();renderSkills();renderCerts();renderInterests();
+
+/* ===== DART Open API 연동 ===== */
+const DART_BASE = "https://opendart.go.kr/api";
+const dartKeyInput = $("dartKeyInput");
+const dartStatus = $("dartStatus");
+const dartResultList = $("dartResultList");
+const dartCompanyInfo = $("dartCompanyInfo");
+
+try{ const saved = localStorage.getItem("dart_api_key"); if(saved) dartKeyInput.value = saved; }catch(e){}
+
+$("dartKeySave").onclick = ()=>{
+  try{ localStorage.setItem("dart_api_key", dartKeyInput.value.trim()); dartStatus.textContent = "키를 저장했습니다."; }
+  catch(e){ dartStatus.textContent = "키 저장에 실패했습니다 (브라우저 저장소 제한)."; }
+};
+
+function corsHelp(err){
+  return `조회에 실패했습니다: ${err}. DART 서버가 브라우저의 직접 호출(CORS)을 막고 있을 가능성이 높습니다. `+
+         `이 경우 키를 서버 쪽에 두고 대신 호출해주는 작은 프록시(예: Cloudflare Worker, Vercel Function)가 필요합니다. `+
+         `원하시면 그 프록시 코드도 만들어드릴 수 있습니다.`;
+}
+
+async function getCorpCodeXml(){
+  const cacheKey = "dart_corpcode_xml_v1";
+  const cacheTs = "dart_corpcode_ts_v1";
+  try{
+    const cached = localStorage.getItem(cacheKey);
+    const ts = Number(localStorage.getItem(cacheTs) || 0);
+    if(cached && (Date.now() - ts) < 7*24*3600*1000) return cached;
+  }catch(e){}
+
+  const key = dartKeyInput.value.trim();
+  if(!key){ throw new Error("API 키를 먼저 입력하고 저장해주세요."); }
+  const res = await fetch(`${DART_BASE}/corpCode.xml?crtfc_key=${encodeURIComponent(key)}`);
+  if(!res.ok) throw new Error(`HTTP ${res.status}`);
+  const blob = await res.blob();
+  const zip = await JSZip.loadAsync(blob);
+  const xmlFile = Object.values(zip.files).find(f=>f.name.endsWith(".xml"));
+  if(!xmlFile) throw new Error("고유번호 목록 파일을 찾지 못했습니다.");
+  const xmlText = await xmlFile.async("text");
+  try{ localStorage.setItem(cacheKey, xmlText); localStorage.setItem(cacheTs, String(Date.now())); }catch(e){}
+  return xmlText;
+}
+
+function parseCorpList(xmlText, query){
+  const doc = new DOMParser().parseFromString(xmlText, "text/xml");
+  const nodes = [...doc.getElementsByTagName("list")];
+  const q = query.trim().toLowerCase();
+  const matches = [];
+  for(const n of nodes){
+    const name = n.getElementsByTagName("corp_name")[0]?.textContent || "";
+    if(name.toLowerCase().includes(q)){
+      matches.push({
+        corp_code: n.getElementsByTagName("corp_code")[0]?.textContent || "",
+        corp_name: name,
+        stock_code: n.getElementsByTagName("stock_code")[0]?.textContent || ""
+      });
+    }
+    if(matches.length >= 20) break;
+  }
+  return matches;
+}
+
+async function fetchCompanyInfo(corpCode){
+  const key = dartKeyInput.value.trim();
+  const res = await fetch(`${DART_BASE}/company.json?crtfc_key=${encodeURIComponent(key)}&corp_code=${corpCode}`);
+  if(!res.ok) throw new Error(`HTTP ${res.status}`);
+  const data = await res.json();
+  if(data.status !== "000") throw new Error(data.message || `오류 코드 ${data.status}`);
+  return data;
+}
+
+function renderCompanyInfo(d){
+  const clsMap = {Y:"유가증권시장", K:"코스닥", N:"코넥스", E:"기타"};
+  dartCompanyInfo.innerHTML = `<div class="row" style="margin-top:12px">
+    <div class="top"><b>${d.corp_name}</b><span>${clsMap[d.corp_cls] || "비상장/기타"}</span></div>
+    <small>대표자: ${d.ceo_nm || "정보없음"} · 설립일: ${d.est_dt || "-"} · 종목코드: ${d.stock_code || "없음"}</small>
+    <p style="margin:8px 0 0;font-size:14px;color:var(--ink)">${d.adres || ""}</p>
+    ${d.hm_url ? `<p style="margin:4px 0 0"><a href="https://${d.hm_url}" target="_blank" rel="noopener">${d.hm_url}</a></p>` : ""}
+  </div>`;
+}
+
+$("dartSearchBtn").onclick = async ()=>{
+  const q = $("dartQuery").value.trim();
+  dartCompanyInfo.innerHTML = "";
+  dartResultList.innerHTML = "";
+  if(!q){ dartStatus.textContent = "기업명을 입력해주세요."; return; }
+  dartStatus.textContent = "고유번호 목록을 불러오는 중입니다 (최초 1회는 다소 걸릴 수 있습니다)...";
+  try{
+    const xml = await getCorpCodeXml();
+    const matches = parseCorpList(xml, q);
+    if(!matches.length){ dartStatus.textContent = "일치하는 기업을 찾지 못했습니다."; return; }
+    dartStatus.textContent = `${matches.length}건 찾았습니다. 하나를 선택하세요.`;
+    dartResultList.innerHTML = "";
+    matches.forEach(m=>{
+      const b = document.createElement("button");
+      b.className = "chip"; b.style.marginRight = "6px"; b.style.marginBottom = "6px";
+      b.textContent = m.corp_name + (m.stock_code ? ` (${m.stock_code})` : "");
+      b.onclick = async ()=>{
+        dartStatus.textContent = "기업개황을 조회하는 중입니다...";
+        try{ const info = await fetchCompanyInfo(m.corp_code); renderCompanyInfo(info); dartStatus.textContent = "조회 완료."; }
+        catch(err){ dartStatus.textContent = corsHelp(err.message); }
+      };
+      dartResultList.append(b);
+    });
+  }catch(err){
+    dartStatus.textContent = corsHelp(err.message);
+  }
+};
+
+</script>
+</body>
+</html>
